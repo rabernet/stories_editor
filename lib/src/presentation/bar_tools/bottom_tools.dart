@@ -181,7 +181,7 @@ class BottomTools extends StatelessWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     children: const [
                                       Text(
-                                        'Share',
+                                        'Compartir',
                                         style: TextStyle(
                                             color: Colors.white,
                                             letterSpacing: 1.5,
