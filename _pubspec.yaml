@@ -26,9 +26,7 @@ dependencies:
   # position
   align_positioned: ^3.0.0
   # own packages
-  gallery_media_picker:
-    git:
-      url: https://github.com/rabernet/gallery_media_picker
+  gallery_media_picker: ^0.0.7
   modal_gif_picker: ^0.0.1
   # painting
   perfect_freehand: ^1.0.4
