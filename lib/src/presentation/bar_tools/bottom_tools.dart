@@ -96,8 +96,8 @@ class BottomTools extends StatelessWidget {
               /// center logo
               controlNotifier.middleBottomWidget != null
                   ? Center(
-                      child: controlNotifier.middleBottomWidget),
-                   
+                      child: controlNotifier.middleBottomWidget)
+                    )
                   : Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
