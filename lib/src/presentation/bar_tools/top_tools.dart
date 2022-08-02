@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:stories_editor/src/domain/models/editable_items.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/control_provider.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/draggable_widget_notifier.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/painting_notifier.dart';
@@ -29,6 +30,7 @@ class TopTools extends StatefulWidget {
 
 class _TopToolsState extends State<TopTools> {
   bool _createVideo = false;
+
   @override
   Widget build(BuildContext context) {
     return Consumer3<ControlNotifier, PaintingNotifier,
@@ -124,6 +126,14 @@ class _TopToolsState extends State<TopTools> {
                       print('PATH IMAGE:: $pathImagen');
                       controlNotifier.mediaPath = pathImagen.toString();
                       controlNotifier.notifyListeners();
+
+                      if (controlNotifier.mediaPath.isNotEmpty) {
+                        itemNotifier.draggableWidget.insert(
+                            0,
+                            EditableItem()
+                              ..type = ItemType.image
+                              ..position = const Offset(0.0, 0));
+                      }
                     }),
                 // ToolButton(
                 //     child: const ImageIcon(
