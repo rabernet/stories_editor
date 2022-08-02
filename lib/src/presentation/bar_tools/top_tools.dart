@@ -118,7 +118,7 @@ class _TopToolsState extends State<TopTools> {
                     // var pathImagen =  _captureImage(ImageSource.camera);
                       
                     //   controlNotifier.mediaPath(pathImagen);
-                    } )
+                    } ),
                 // ToolButton(
                 //     child: const ImageIcon(
                 //       AssetImage('assets/icons/stickers.png',
