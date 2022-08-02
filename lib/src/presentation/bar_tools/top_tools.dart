@@ -123,6 +123,7 @@ class _TopToolsState extends State<TopTools> {
 
                       print('PATH IMAGE:: $pathImagen');
                       controlNotifier.mediaPath = pathImagen.toString();
+                      controlNotifier.notifyListeners();
                     }),
                 // ToolButton(
                 //     child: const ImageIcon(
