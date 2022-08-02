@@ -114,7 +114,11 @@ class _TopToolsState extends State<TopTools> {
                     ToolButton(
                     child: const Icon(Icons.camera_alt_outlined,size:20,color: Colors.white,),
                     backGroundColor: Colors.black12,
-                    onTap: () => _captureImage(ImageSource.camera)),
+                    onTap:  (){
+                    var pathImagen =  _captureImage(ImageSource.camera));
+                      
+                      controlNotifier.mediaPath(pathImagen);
+                    } 
                 // ToolButton(
                 //     child: const ImageIcon(
                 //       AssetImage('assets/icons/stickers.png',
@@ -174,7 +178,7 @@ class _TopToolsState extends State<TopTools> {
       maxWidth: 970,
     );
     if (pickedFile != null) {
- controlNotifier.mediaPath = pickedFile.path;
+        return pickedFile.path;
       
       // Navigator.of(context).push(
       //   MaterialPageRoute(
