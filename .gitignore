@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+ios/
 
 # IntelliJ related
 *.iml
@@ -27,3 +28,10 @@
 .dart_tool/
 .packages
 build/
+_config.yml
+.gitignore
+.flutter-plugins*
+
+
+
+

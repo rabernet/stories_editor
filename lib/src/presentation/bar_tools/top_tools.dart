@@ -111,14 +111,16 @@ class _TopToolsState extends State<TopTools> {
                         _createVideo = false;
                       });
                     }),
-                    ToolButton(
-                    child: const Icon(Icons.camera_alt_outlined,size:20,color: Colors.white,),
+                ToolButton(
+                    child: const Icon(
+                      Icons.camera_alt_outlined,
+                      size: 20,
+                      color: Colors.white,
+                    ),
                     backGroundColor: Colors.black12,
                     onTap: () {
-                    // var pathImagen =  _captureImage(ImageSource.camera);
-                      
-                    //   controlNotifier.mediaPath(pathImagen);
-                    } ),
+                      var pathImagen = _captureImage(ImageSource.camera);
+                    }),
                 // ToolButton(
                 //     child: const ImageIcon(
                 //       AssetImage('assets/icons/stickers.png',
@@ -170,6 +172,7 @@ class _TopToolsState extends State<TopTools> {
       },
     );
   }
+
   //CAPTURAR DE LA CAMARA
   _captureImage(ImageSource src) async {
     final pickedFile = await ImagePicker().pickImage(
@@ -178,8 +181,8 @@ class _TopToolsState extends State<TopTools> {
       maxWidth: 970,
     );
     if (pickedFile != null) {
-        return pickedFile.path;
-      
+      return pickedFile.path;
+
       // Navigator.of(context).push(
       //   MaterialPageRoute(
       //     builder: (context) => UploadImagePage(
@@ -190,6 +193,7 @@ class _TopToolsState extends State<TopTools> {
       // );
     }
   }
+
   /// gradient color selector
   Widget _selectColor({onTap, controlProvider}) {
     return Padding(
