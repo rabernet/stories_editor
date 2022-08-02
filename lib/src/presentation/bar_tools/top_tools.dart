@@ -110,16 +110,20 @@ class _TopToolsState extends State<TopTools> {
                         _createVideo = false;
                       });
                     }),
-                ToolButton(
-                    child: const ImageIcon(
-                      AssetImage('assets/icons/stickers.png',
-                          package: 'stories_editor'),
-                      color: Colors.white,
-                      size: 20,
-                    ),
+                    ToolButton(
+                    child: const Icon(Icons.camera_alt_outlined,size:20,color: Colors.white,),
                     backGroundColor: Colors.black12,
-                    onTap: () => createGiphyItem(
-                        context: context, giphyKey: controlNotifier.giphyKey)),
+                    onTap: () => _captureImage(ImageSource.camera, context: context)),
+                // ToolButton(
+                //     child: const ImageIcon(
+                //       AssetImage('assets/icons/stickers.png',
+                //           package: 'stories_editor'),
+                //       color: Colors.white,
+                //       size: 20,
+                //     ),
+                //     backGroundColor: Colors.black12,
+                //     onTap: () => createGiphyItem(
+                //         context: context, giphyKey: controlNotifier.giphyKey)),
                 ToolButton(
                     child: const ImageIcon(
                       AssetImage('assets/icons/draw.png',
@@ -161,7 +165,26 @@ class _TopToolsState extends State<TopTools> {
       },
     );
   }
-
+  //CAPTURAR DE LA CAMARA
+  _captureImage(ImageSource src, BuildContext context) async {
+    final pickedFile = await ImagePicker().pickImage(
+      source: src,
+      maxHeight: 680,
+      maxWidth: 970,
+    );
+    if (pickedFile != null) {
+ controlNotifier.mediaPath = pickedFile.path;
+      
+      // Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //     builder: (context) => UploadImagePage(
+      //       imageFile: File(pickedFile.path),
+      //       imagePath: pickedFile.path,
+      //     ),
+      //   ),
+      // );
+    }
+  }
   /// gradient color selector
   Widget _selectColor({onTap, controlProvider}) {
     return Padding(
