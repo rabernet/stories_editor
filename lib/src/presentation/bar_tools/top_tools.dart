@@ -117,7 +117,7 @@ class _TopToolsState extends State<TopTools> {
                     onTap: () {
                     var pathImagen =  _captureImage(ImageSource.camera);
                       
-                      controlNotifier.mediaPath(pathImagen);
+                      controlNotifier.mediaPath(!pathImagen);
                     } 
                 // ToolButton(
                 //     child: const ImageIcon(
