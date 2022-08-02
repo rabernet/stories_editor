@@ -121,18 +121,22 @@ class _TopToolsState extends State<TopTools> {
                     ),
                     backGroundColor: Colors.black12,
                     onTap: () async {
+                      //POR RAFAEL 2 DE AGOSTO
                       var pathImagen = await _captureImage(ImageSource.camera);
 
                       print('PATH IMAGE:: $pathImagen');
-                      controlNotifier.mediaPath = pathImagen.toString();
-                      controlNotifier.notifyListeners();
 
-                      if (controlNotifier.mediaPath.isNotEmpty) {
-                        itemNotifier.draggableWidget.insert(
-                            0,
-                            EditableItem()
-                              ..type = ItemType.image
-                              ..position = const Offset(0.0, 0));
+                      if (pathImagen != '') {
+                        controlNotifier.mediaPath = pathImagen.toString();
+                        controlNotifier.notifyListeners();
+
+                        if (controlNotifier.mediaPath.isNotEmpty) {
+                          itemNotifier.draggableWidget.insert(
+                              0,
+                              EditableItem()
+                                ..type = ItemType.image
+                                ..position = const Offset(0.0, 0));
+                        }
                       }
                     }),
                 // ToolButton(
