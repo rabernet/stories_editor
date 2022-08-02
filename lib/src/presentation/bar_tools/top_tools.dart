@@ -114,8 +114,8 @@ class _TopToolsState extends State<TopTools> {
                     ToolButton(
                     child: const Icon(Icons.camera_alt_outlined,size:20,color: Colors.white,),
                     backGroundColor: Colors.black12,
-                    onTap:  (){
-                    var pathImagen =  _captureImage(ImageSource.camera));
+                    onTap: () {
+                    var pathImagen =  _captureImage(ImageSource.camera);
                       
                       controlNotifier.mediaPath(pathImagen);
                     } 
