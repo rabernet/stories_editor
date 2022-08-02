@@ -126,7 +126,7 @@ class _TopToolsState extends State<TopTools> {
 
                       print('PATH IMAGE:: $pathImagen');
 
-                      if (pathImagen != '') {
+                      if (pathImagen != '' || pathImagen != null) {
                         controlNotifier.mediaPath = pathImagen.toString();
                         controlNotifier.notifyListeners();
 
