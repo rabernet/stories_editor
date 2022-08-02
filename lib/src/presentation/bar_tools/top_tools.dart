@@ -114,7 +114,7 @@ class _TopToolsState extends State<TopTools> {
                     ToolButton(
                     child: const Icon(Icons.camera_alt_outlined,size:20,color: Colors.white,),
                     backGroundColor: Colors.black12,
-                    onTap: () => _captureImage(ImageSource.camera, context: context)),
+                    onTap: () => _captureImage(ImageSource.camera)),
                 // ToolButton(
                 //     child: const ImageIcon(
                 //       AssetImage('assets/icons/stickers.png',
@@ -167,7 +167,7 @@ class _TopToolsState extends State<TopTools> {
     );
   }
   //CAPTURAR DE LA CAMARA
-  _captureImage(ImageSource src, BuildContext context) async {
+  _captureImage(ImageSource src) async {
     final pickedFile = await ImagePicker().pickImage(
       source: src,
       maxHeight: 680,
