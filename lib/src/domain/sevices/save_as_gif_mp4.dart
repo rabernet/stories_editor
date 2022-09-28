@@ -20,7 +20,7 @@ class WidgetRecorderController extends ChangeNotifier {
   final GlobalKey _containerKey;
 
   /// frame callback
-  final SchedulerBinding _binding = SchedulerBinding.instance!;
+  final SchedulerBinding _binding = SchedulerBinding.instance;
 
   /// save frames
   final List<ui.Image> _frames = [];

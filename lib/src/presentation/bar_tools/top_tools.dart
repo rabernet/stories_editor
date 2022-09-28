@@ -124,7 +124,7 @@ class _TopToolsState extends State<TopTools> {
                       //POR RAFAEL 2 DE AGOSTO
                       var pathImagen = await _captureImage(ImageSource.camera);
 
-                      print('PATH IMAGE:: $pathImagen');
+                      // print('PATH IMAGE:: $pathImagen');
 
                       if (pathImagen != null && pathImagen.isNotEmpty) {
                         controlNotifier.mediaPath = pathImagen.toString();
