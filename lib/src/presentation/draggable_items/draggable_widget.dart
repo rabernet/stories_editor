@@ -94,8 +94,8 @@ class DraggableWidget extends StatelessWidget {
       /// image [file_image_gb.dart]
       case ItemType.image:
         if (_controlProvider.mediaPath[0].path.toString().isNotEmpty) {
-          print('MUESTRA IMAGEN 4');
-          print('PATH: ${_controlProvider.mediaPath[0].path.toString()}');
+          // print('MUESTRA IMAGEN 4');
+          // print('PATH: ${_controlProvider.mediaPath[0].path.toString()}');
           overlayWidget = SizedBox(
             width: _size.width - 72,
             child: FileImageBG(
