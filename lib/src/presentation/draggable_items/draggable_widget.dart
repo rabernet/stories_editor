@@ -37,7 +37,7 @@ class DraggableWidget extends StatelessWidget {
         Provider.of<GradientNotifier>(this.context, listen: false);
     var _controlProvider =
         Provider.of<ControlNotifier>(this.context, listen: false);
-    Widget overlayWidget;
+    Widget overlayWidget = Container();
 
     switch (draggableWidget.type) {
       case ItemType.text:
@@ -93,7 +93,7 @@ class DraggableWidget extends StatelessWidget {
 
       /// image [file_image_gb.dart]
       case ItemType.image:
-        if (_controlProvider.mediaPath.isNotEmpty) {
+        if (_controlProvider.mediaPath[0].path.toString().isNotEmpty) {
           print('MUESTRA IMAGEN 4');
           print('PATH: ${_controlProvider.mediaPath[0].path.toString()}');
           overlayWidget = SizedBox(
