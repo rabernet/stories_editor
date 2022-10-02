@@ -94,7 +94,7 @@ class DraggableWidget extends StatelessWidget {
       /// image [file_image_gb.dart]
       case ItemType.image:
         if (_controlProvider.mediaPath.isNotEmpty) {
-          print('MUESTRA IMAGEN 1');
+          print('MUESTRA IMAGEN 2');
           //RAFAEL OCT 2 se adiciona map
           overlayWidget = Container();
           _controlProvider.mediaPath.map((data) {
