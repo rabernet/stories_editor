@@ -98,6 +98,7 @@ class DraggableWidget extends StatelessWidget {
           //RAFAEL OCT 2 se adiciona map
           overlayWidget = Container();
           _controlProvider.mediaPath.map((data) {
+            print('path:: ${data.path.toString()}');
             overlayWidget = SizedBox(
               width: _size.width - 72,
               child: FileImageBG(
