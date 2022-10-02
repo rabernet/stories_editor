@@ -115,9 +115,6 @@ class ControlNotifier extends ChangeNotifier {
   List<PickedAssetModel> _mediaPath = [];
   List<PickedAssetModel> get mediaPath => _mediaPath;
 
-  /// save selected asset item
-  List<PickedAssetModel> pickedFile = [];
-
   set mediaPath(List<PickedAssetModel> media) {
     _mediaPath = media;
     notifyListeners();
