@@ -127,7 +127,9 @@ class _TopToolsState extends State<TopTools> {
                       // print('PATH IMAGE:: $pathImagen');
 
                       if (pathImagen != null && pathImagen.isNotEmpty) {
-                        controlNotifier.mediaPath = pathImagen.toString();
+                        //RAFAEL 2 OCT
+                        // controlNotifier.mediaPath = pathImagen.toString();
+                        controlNotifier.mediaPath = pathImagen;
                         controlNotifier.notifyListeners();
 
                         if (controlNotifier.mediaPath.isNotEmpty) {

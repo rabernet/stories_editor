@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stories_editor/src/presentation/utils/constants/colors.dart';
 import 'package:stories_editor/src/presentation/utils/constants/font_family.dart';
 import 'package:stories_editor/src/presentation/utils/constants/gradients.dart';
+import 'package:gallery_media_picker/gallery_media_picker.dart';
 
 class ControlNotifier extends ChangeNotifier {
   String _giphyKey = '';
@@ -101,9 +102,23 @@ class ControlNotifier extends ChangeNotifier {
   }
 
   /// get image path
-  String _mediaPath = '';
-  String get mediaPath => _mediaPath;
-  set mediaPath(String media) {
+  // String _mediaPath = '';
+  // String get mediaPath => _mediaPath;
+
+  // set mediaPath(String media) {
+  //   _mediaPath = media;
+  //   notifyListeners();
+  // }
+
+  // New image path
+
+  List<PickedAssetModel> _mediaPath = [];
+  List<PickedAssetModel> get mediaPath => _mediaPath;
+
+  /// save selected asset item
+  List<PickedAssetModel> pickedFile = [];
+
+  set mediaPath(List<PickedAssetModel> media) {
     _mediaPath = media;
     notifyListeners();
   }

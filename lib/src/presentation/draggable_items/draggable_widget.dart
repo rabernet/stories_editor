@@ -97,7 +97,8 @@ class DraggableWidget extends StatelessWidget {
           overlayWidget = SizedBox(
             width: _size.width - 72,
             child: FileImageBG(
-              filePath: File(_controlProvider.mediaPath),
+              //RAFAEL
+              filePath: File(_controlProvider.mediaPath.toString()),
               generatedGradient: (color1, color2) {
                 _colorProvider.color1 = color1;
                 _colorProvider.color2 = color2;

@@ -73,7 +73,9 @@ class BottomTools extends StatelessWidget {
                         : GestureDetector(
                             onTap: () {
                               /// clear image url variable
-                              controlNotifier.mediaPath = '';
+                              /// Rafael
+                              // controlNotifier.mediaPath = '';
+                              controlNotifier.mediaPath = [];
                               itemNotifier.draggableWidget.removeAt(0);
                             },
                             child: Container(
@@ -95,9 +97,7 @@ class BottomTools extends StatelessWidget {
 
               /// center logo
               controlNotifier.middleBottomWidget != null
-                  ? Center(
-                      child: controlNotifier.middleBottomWidget
-                    )
+                  ? Center(child: controlNotifier.middleBottomWidget)
                   : Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,

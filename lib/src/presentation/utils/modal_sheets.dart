@@ -194,7 +194,8 @@ _resetDefaults({required BuildContext context}) {
   _widgetProvider.setDefaults();
   _paintingProvider.resetDefaults();
   _editingProvider.setDefaults();
-  _controlProvider.mediaPath = '';
+  //RAFAEL
+  _controlProvider.mediaPath = [];
 }
 
 _dispose({required context, required message}) {
