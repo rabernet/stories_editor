@@ -37,7 +37,7 @@ class DraggableWidget extends StatelessWidget {
         Provider.of<GradientNotifier>(this.context, listen: false);
     var _controlProvider =
         Provider.of<ControlNotifier>(this.context, listen: false);
-    Widget overlayWidget;
+    Widget overlayWidget = Container();
 
     switch (draggableWidget.type) {
       case ItemType.text:
@@ -93,12 +93,13 @@ class DraggableWidget extends StatelessWidget {
 
       /// image [file_image_gb.dart]
       case ItemType.image:
-        if (_controlProvider.mediaPath.isNotEmpty) {
-          print('MUESTRA IMAGEN 2');
-          //RAFAEL OCT 2 se adiciona map
-          overlayWidget = Container();
-          _controlProvider.mediaPath.map((data) {
-            print('path:: ${data.path.toString()}');
+        _controlProvider.mediaPath.map((data) {
+          print('path:: ${data.path.toString()}');
+
+          if (data.path.toString().isNotEmpty) {
+            print('MUESTRA IMAGEN 3');
+            //RAFAEL OCT 2 se adiciona map
+
             overlayWidget = SizedBox(
               width: _size.width - 72,
               child: FileImageBG(
@@ -110,10 +111,10 @@ class DraggableWidget extends StatelessWidget {
                 },
               ),
             );
-          });
-        } else {
-          overlayWidget = Container();
-        }
+          } else {
+            overlayWidget = Container();
+          }
+        });
 
         break;
 
