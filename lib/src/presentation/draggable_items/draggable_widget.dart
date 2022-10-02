@@ -94,17 +94,22 @@ class DraggableWidget extends StatelessWidget {
       /// image [file_image_gb.dart]
       case ItemType.image:
         if (_controlProvider.mediaPath.isNotEmpty) {
-          overlayWidget = SizedBox(
-            width: _size.width - 72,
-            child: FileImageBG(
-              //RAFAEL
-              filePath: File(_controlProvider.mediaPath.toString()),
-              generatedGradient: (color1, color2) {
-                _colorProvider.color1 = color1;
-                _colorProvider.color2 = color2;
-              },
-            ),
-          );
+          print('MUESTRA IMAGEN 1');
+          //RAFAEL OCT 2 se adiciona map
+          overlayWidget = Container();
+          _controlProvider.mediaPath.map((data) {
+            overlayWidget = SizedBox(
+              width: _size.width - 72,
+              child: FileImageBG(
+                //RAFAEL
+                filePath: File(data.path.toString()),
+                generatedGradient: (color1, color2) {
+                  _colorProvider.color1 = color1;
+                  _colorProvider.color2 = color2;
+                },
+              ),
+            );
+          });
         } else {
           overlayWidget = Container();
         }
