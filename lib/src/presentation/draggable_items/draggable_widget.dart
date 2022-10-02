@@ -37,7 +37,7 @@ class DraggableWidget extends StatelessWidget {
         Provider.of<GradientNotifier>(this.context, listen: false);
     var _controlProvider =
         Provider.of<ControlNotifier>(this.context, listen: false);
-    Widget overlayWidget = Container();
+    Widget overlayWidget;
 
     switch (draggableWidget.type) {
       case ItemType.text:
@@ -93,28 +93,23 @@ class DraggableWidget extends StatelessWidget {
 
       /// image [file_image_gb.dart]
       case ItemType.image:
-        _controlProvider.mediaPath.map((data) {
-          print('path:: ${data.path.toString()}');
-
-          if (data.path.toString().isNotEmpty) {
-            print('MUESTRA IMAGEN 3');
-            //RAFAEL OCT 2 se adiciona map
-
-            overlayWidget = SizedBox(
-              width: _size.width - 72,
-              child: FileImageBG(
-                //RAFAEL
-                filePath: File(data.path.toString()),
-                generatedGradient: (color1, color2) {
-                  _colorProvider.color1 = color1;
-                  _colorProvider.color2 = color2;
-                },
-              ),
-            );
-          } else {
-            overlayWidget = Container();
-          }
-        });
+        if (_controlProvider.mediaPath.isNotEmpty) {
+          print('MUESTRA IMAGEN 4');
+          print('PATH: ${_controlProvider.mediaPath[0].path.toString()}');
+          overlayWidget = SizedBox(
+            width: _size.width - 72,
+            child: FileImageBG(
+              //RAFAEL
+              filePath: File(_controlProvider.mediaPath[0].path.toString()),
+              generatedGradient: (color1, color2) {
+                _colorProvider.color1 = color1;
+                _colorProvider.color2 = color2;
+              },
+            ),
+          );
+        } else {
+          overlayWidget = Container();
+        }
 
         break;
 
